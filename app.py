@@ -457,7 +457,7 @@ with col1:
             
             if st.button(f"Select {contact['name']}", key=f"select_{contact['id']}"):
                 toggle_contact_selection(contact)
-                st.experimental_rerun()
+                st.rerun()
         
         # Display selected contacts
         if st.session_state.selected_contacts:
@@ -485,7 +485,7 @@ with col1:
             
             if st.button(f"Select {contact['name']}", key=f"select_recent_{contact['id']}"):
                 toggle_contact_selection(contact)
-                st.experimental_rerun()
+                st.rerun()
     
     with tab3:
         with st.form("new_contact_form"):
@@ -503,7 +503,7 @@ with col1:
                         'company': company
                     }
                     toggle_contact_selection(new_contact)
-                    st.experimental_rerun()
+                    st.rerun()
                 else:
                     show_notification("error", "Missing Information", "Please provide at least a name and email address.")
 
@@ -581,7 +581,7 @@ with col2:
             # Reset form
             st.session_state.invoice_uploaded = False
             st.session_state.selected_contacts = []
-            st.experimental_rerun()
+            st.rerun()
     
     # Email Settings
     st.markdown("""
